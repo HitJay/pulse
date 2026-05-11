@@ -60,6 +60,8 @@ gantt
 - 持续优化 landscape report API
 - vLLM Qwen3-8B 服务稳定运行
 - 测试脚本完善（test_api.py、evaluate_predictions.py）
+- Qwen3.5-32B 在 8×A100 节点 vLLM 部署成功
+- 完成 DeepSeek-V4-Flash / Qwen3.5 自托管可行性评估（[简报](3_safety/llm-hosting-feasibility.md)）
 
 ### 2026-04
 
