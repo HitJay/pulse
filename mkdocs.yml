@@ -1,0 +1,83 @@
+site_name: Pulse – Project Dashboard
+site_url: https://hitjay.github.io/pulse
+site_description: Multi-project management hub with automated reporting
+repo_url: https://github.com/HitJay/pulse
+repo_name: HitJay/pulse
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: 切换到暗色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: 切换到亮色模式
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+  - mermaid2
+  - glightbox
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - 🏠 总览: index.md
+  - 📂 项目:
+    - projects/index.md
+    - 3_safety (安全性评估): projects/3_safety.md
+  - 📋 周报:
+    - reports/weekly/index.md
+  - 📊 月报:
+    - reports/monthly/index.md
+  - 📈 季报:
+    - reports/quarterly/index.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/HitJay

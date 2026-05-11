@@ -1,0 +1,70 @@
+name: Weekly Report
+
+on:
+  # 每周一早上 9 点（UTC+8 = UTC 01:00）
+  schedule:
+    - cron: '0 1 * * MON'
+
+  # 手动触发
+  workflow_dispatch:
+    inputs:
+      week:
+        description: 'ISO week (e.g. 2026-W19). Leave empty for current week.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml jinja2 gitpython rich
+
+      - name: Determine week
+        id: week
+        run: |
+          if [ -n "${{ github.event.inputs.week }}" ]; then
+            echo "WEEK=${{ github.event.inputs.week }}" >> $GITHUB_OUTPUT
+          else
+            WEEK=$(python -c "from datetime import datetime; d=datetime.now(); print(f'{d.isocalendar()[0]}-W{d.isocalendar()[1]:02d}')")
+            echo "WEEK=$WEEK" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Collect project data
+        run: python scripts/collect.py --since "1 week ago"
+
+      - name: Render weekly report
+        run: python scripts/render.py weekly --week ${{ steps.week.outputs.WEEK }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "📋 周报 ${{ steps.week.outputs.WEEK }} (自动生成)"
+          title: "📋 周报 ${{ steps.week.outputs.WEEK }}"
+          body: |
+            ## 自动生成的周报
+
+            - **周次**: ${{ steps.week.outputs.WEEK }}
+            - **生成时间**: ${{ github.event.repository.updated_at }}
+
+            请审阅后合并。合并后文档站将自动更新。
+
+            > 由 GitHub Actions 自动生成
+          branch: report/${{ steps.week.outputs.WEEK }}
+          base: main
+          labels: |
+            weekly-report
+            auto-generated

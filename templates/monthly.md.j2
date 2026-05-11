@@ -1,0 +1,73 @@
+---
+marp: true
+theme: default
+paginate: true
+header: "月报 {{ year }}-{{ month }} | Pulse"
+footer: "Pulse – Project Dashboard"
+---
+
+# 📊 月报 {{ year }}-{{ month }}
+
+**报告期间**：{{ year }}-{{ month }}-01 ~ {{ month_end }}
+**生成时间**：{{ generated_at }}
+
+---
+
+## 📈 本月总览
+
+| 项目 | 状态 | 本月提交 | 活跃里程碑 | 完成率 |
+|------|------|----------|-----------|--------|
+{% for p in projects -%}
+| **{{ p.display_name }}** | {{ p.status_emoji }} | {{ p.commit_count }} | {{ p.active_milestone_names }} | {{ p.completion_pct }}% |
+{% endfor %}
+
+---
+
+{% for p in projects %}
+## {{ p.status_emoji }} {{ p.display_name }}
+
+### 本月成果
+
+{% for item in p.monthly_highlights -%}
+- {{ item }}
+{% endfor %}
+
+### 里程碑进度
+
+{% for m in p.milestones -%}
+- {{ "✅" if m.status == "done" else "🔄" if m.status == "active" else "⬜" }} **{{ m.name }}**（{{ m.start }} → {{ m.end }}）
+{% endfor %}
+
+{% if p.weekly_summaries -%}
+### 各周要点
+
+{% for w in p.weekly_summaries -%}
+- **{{ w.week_id }}**：{{ w.summary }}
+{% endfor %}
+{% endif %}
+
+---
+
+{% endfor %}
+
+## 📌 下月计划
+
+{% for p in projects -%}
+- **{{ p.display_name }}**：{{ p.next_month_plan | default("待补充") }}
+{% endfor %}
+
+---
+
+## ⚠️ 风险与阻塞
+
+{% if risks -%}
+{% for r in risks -%}
+- {{ r }}
+{% endfor %}
+{% else -%}
+- 暂无
+{% endif %}
+
+---
+
+<small>由 Pulse 自动生成 · `make monthly`</small>

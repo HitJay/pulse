@@ -1,0 +1,27 @@
+[project]
+name = "pulse"
+version = "0.1.0"
+description = "Project management hub – documentation site + automated reporting"
+requires-python = ">=3.10"
+dependencies = [
+    "mkdocs-material>=9.5",
+    "mkdocs-mermaid2-plugin>=1.1",
+    "mkdocs-glightbox>=0.4",
+    "jinja2>=3.1",
+    "pyyaml>=6.0",
+    "python-pptx>=0.6",
+    "gitpython>=3.1",
+    "rich>=13.0",
+    "typer>=0.12",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends._legacy:_Backend"

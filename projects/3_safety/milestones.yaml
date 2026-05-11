@@ -1,0 +1,52 @@
+# ── 里程碑定义 ──────────────────────────────────────────────────
+# 用于驱动甘特图、进度条、周报自动填充
+# status: done | active | todo
+
+milestones:
+  - id: s1
+    name: 数据收集与整理
+    section: 阶段一：基础搭建
+    status: done
+    start: 2026-01-15
+    end: 2026-02-15
+    notes: 完成文献数据、PPT 数据的收集与清洗
+
+  - id: s2
+    name: PPT 分析工具开发
+    section: 阶段一：基础搭建
+    status: done
+    start: 2026-02-01
+    end: 2026-03-01
+    notes: ppt_analyzer.py 完成，支持结构化提取
+
+  - id: s3
+    name: LLM API 开发
+    section: 阶段二：核心开发
+    status: active
+    start: 2026-03-01
+    end: 2026-05-31
+    notes: landscape_report_api.py，基于 vLLM + Qwen3
+
+  - id: s4
+    name: 报告生成模块
+    section: 阶段二：核心开发
+    status: active
+    start: 2026-04-01
+    end: 2026-06-30
+    notes: txt_to_ppt.py，自动化报告输出
+
+  - id: s5
+    name: API 集成与测试
+    section: 阶段三：部署优化
+    status: todo
+    start: 2026-06-01
+    end: 2026-08-15
+    notes: 端到端测试、性能优化
+
+  - id: s6
+    name: 文档与交付
+    section: 阶段三：部署优化
+    status: todo
+    start: 2026-08-01
+    end: 2026-09-30
+    notes: 最终文档、用户培训、交付

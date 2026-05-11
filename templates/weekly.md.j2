@@ -1,0 +1,77 @@
+---
+marp: true
+theme: default
+paginate: true
+header: "周报 {{ week_id }} | {{ date_range }}"
+footer: "Pulse – Project Dashboard"
+---
+
+# 📋 周报 {{ week_id }}
+
+**日期范围**：{{ date_range }}
+**生成时间**：{{ generated_at }}
+
+---
+
+## 📊 本周概览
+
+| 项目 | 状态 | 本周提交 | 要点 |
+|------|------|----------|------|
+{% for p in projects -%}
+| **{{ p.display_name }}** | {{ p.status_emoji }} {{ p.status }} | {{ p.commit_count }} | {{ p.summary }} |
+{% endfor %}
+
+---
+
+{% for p in projects %}
+## {{ p.status_emoji }} {{ p.display_name }}
+
+### 本周进展
+
+{% for item in p.highlights -%}
+- {{ item }}
+{% endfor %}
+
+{% if p.commits -%}
+### 关键提交
+
+| 时间 | 提交信息 |
+|------|----------|
+{% for c in p.commits -%}
+| {{ c.date }} | {{ c.message }} |
+{% endfor %}
+{% endif %}
+
+{% if p.active_milestones -%}
+### 当前里程碑
+
+{% for m in p.active_milestones -%}
+- **{{ m.name }}**：{{ m.start }} → {{ m.end }}（{{ m.status }}）
+{% endfor %}
+{% endif %}
+
+---
+
+{% endfor %}
+
+## 📌 下周计划
+
+{% for p in projects -%}
+- **{{ p.display_name }}**：{{ p.next_week_plan | default("待补充") }}
+{% endfor %}
+
+---
+
+## ⚠️ 风险与阻塞
+
+{% if risks -%}
+{% for r in risks -%}
+- {{ r }}
+{% endfor %}
+{% else -%}
+- 暂无
+{% endif %}
+
+---
+
+<small>由 Pulse 自动生成 · `make weekly`</small>

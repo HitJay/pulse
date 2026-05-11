@@ -1,0 +1,24 @@
+# ── 项目元数据 ──────────────────────────────────────────────────
+name: 3_safety
+display_name: 安全性评估系统
+description: 基于 LLM 的靶点安全性文献分析与报告自动生成
+owner: QYJI
+status: active          # active | paused | completed | archived
+priority: high          # high | medium | low
+
+# 关联信息
+repo_url: https://github.com/HitJay/safety
+local_path: /home/QYJI/das/3_safety
+branch: main
+
+# 时间线
+start_date: 2026-01-15
+target_end_date: 2026-09-30
+
+# 标签
+tags:
+  - LLM
+  - safety
+  - NLP
+  - drug-discovery
+  - automation
