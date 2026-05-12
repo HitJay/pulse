@@ -1,0 +1,23 @@
+# ── 项目元数据 ──────────────────────────────────────────────────
+name: druggability
+display_name: 成药性评估
+description: 靶点成药性（druggability）评估与建模
+owner: QYJI
+status: active          # active | paused | completed | archived
+priority: high          # high | medium | low
+
+# 关联信息
+repo_url: https://github.com/HitJay/druggability
+local_path: /home/QYJI/das/druggability
+branch: main
+
+# 时间线
+start_date: 2026-05-12
+target_end_date: 2026-12-31
+
+# 标签
+tags:
+  - druggability
+  - drug-discovery
+  - target-assessment
+  - modeling

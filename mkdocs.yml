@@ -70,6 +70,7 @@ nav:
   - 📂 项目:
     - projects/index.md
     - 3_safety (安全性评估): projects/3_safety.md
+    - druggability (成药性评估): projects/druggability.md
   - 📋 周报:
     - reports/weekly/index.md
   - 📊 月报:

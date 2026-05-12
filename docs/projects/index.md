@@ -18,6 +18,14 @@ title: 项目列表
 
     [:octicons-arrow-right-24: 查看详情](3_safety.md)
 
+-   :material-pill:{ .lg .middle } **druggability – 成药性评估**
+
+    ---
+
+    靶点成药性（druggability）评估与建模
+
+    [:octicons-arrow-right-24: 查看详情](druggability.md)
+
 -   :material-microscope:{ .lg .middle } **2_myotube – 肌管分析**
 
     ---

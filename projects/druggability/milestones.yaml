@@ -1,0 +1,28 @@
+# ── 里程碑定义 ──────────────────────────────────────────────────
+# 用于驱动甘特图、进度条、周报自动填充
+# status: done | active | todo
+
+milestones:
+  - id: d1
+    name: 需求调研与数据收集
+    section: 阶段一：基础搭建
+    status: active
+    start: 2026-05-12
+    end: 2026-06-30
+    notes: 调研成药性评估方法，收集训练数据
+
+  - id: d2
+    name: 特征工程与模型开发
+    section: 阶段二：核心开发
+    status: todo
+    start: 2026-07-01
+    end: 2026-09-30
+    notes: 靶点特征提取、成药性评分模型构建
+
+  - id: d3
+    name: 评估与优化
+    section: 阶段三：部署优化
+    status: todo
+    start: 2026-10-01
+    end: 2026-12-31
+    notes: 模型评估、调优、文档与交付
