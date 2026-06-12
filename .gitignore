@@ -30,3 +30,11 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Personal / job-search materials — keep local, never push to remote
+output/
+image.png
+/Qiuye Jin的简历.md
+/Qiuye Jin的简历.pdf
+/靳秋野的简历.md
+/靳秋野的简历.pdf
