@@ -13,6 +13,8 @@ site/
 # Generated decks (rebuild anytime)
 decks/*.pptx
 decks/*.pdf
+reports/ric-monthly/**/*.pptx
+reports/ric-monthly/**/*.pdf
 
 # Environment
 .env
