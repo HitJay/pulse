@@ -83,23 +83,18 @@ J = "https://jira.novonordisk.com/browse/"
 
 # ── Rows ──
 ROWS = [
-    # 1. Capability — RIC-381
+    # 1. Capability — RIC-381 (HepG2 EE MoA, vAssay 内容已去除)
     {
         "cat": "Capability", "cat_span": 3,
-        "act": "HepG2 EE — DRUG-seq × imaging cross-modal MoA + vAssay leak-proof benchmark (RIC-381)",
+        "act": "HepG2 EE — DRUG-seq × imaging cross-modal MoA (RIC-381)",
         "desc": [
             ("1. ", False, False),
             ("1440-well three-modality alignment", True, False),
-            (" with zero gaps: DRUG-seq transcriptomics × C24 imaging (DINOv2 384-dim + Seahorse prediction) × TMRM mechanism axis. Pipeline + tests in vCell (24/24 passed).", False, False),
+            (": DRUG-seq × C24 imaging (DINOv2 384-dim) × TMRM, zero gaps; vCell pipeline + 24/24 tests.", False, False),
             ("2. ", False, False),
-            ("vAssay model review — label-leak diagnosis", True, False),
-            (": traced the random R²≈0.77 to within-group y-leak (264 imaging rows → only 88 unique Seahorse y; within-group std≈0) + plate effect; established well-group-aware + leave-plate-out evaluation framework.", False, False),
-            ("3. ", False, False),
-            ("Cross-modal MoA story + EE-DrugSeq-v1 benchmark", True, False),
-            (": 175 target perturbations, KD-quality tiering (strong 46 / weak 94 / failed 28); MoA states uncoupler-like 53 / mixed 39 / biogenesis-like 13 / toxic-collapse 6 / neutral 64; ", False, False),
-            ("52 tier-1 immediate-validation candidates", True, False),
-            (" (DDI2, TAGLN, G6PC, …).", False, False),
-            ("4. TMRM channel-identity correction verified against 1_Pipeline/2_tmrm.py and imaging.", False, False),
+            ("Cross-modal MoA + 52 tier-1 candidates", True, False),
+            (": 175 perturbations, KD tiering (strong 46 / weak 94 / failed 28); MoA states uncoupler-like 53 / mixed 39 / biogenesis-like 13 / toxic-collapse 6 / neutral 64.", False, False),
+            ("3. TMRM channel-identity correction verified against pipeline + imaging.", False, False),
         ],
         "link": [(f"{J}RIC-381", False, False)],
     },
@@ -109,18 +104,15 @@ ROWS = [
         "desc": [
             ("1. ", False, False),
             ("Modality-aware prompts + hedge-aware risk scoring", True, False),
-            (": peripherally-restricted / partial-IA modality no longer blindly down-weights CNS LoF evidence.", False, False),
+            (": peripherally-restricted / partial-IA no longer blindly down-weights CNS LoF.", False, False),
             ("2. ", False, False),
-            ("P0/P1 scoring + conditional-risk layer", True, False),
-            (" (2026-06-18): modality-based mitigation and residual no-go concerns made explicit for safety review.", False, False),
-            ("3. Packaged toolkit as installable ", False, False),
+            ("P0/P1 + conditional-risk layer", True, False),
+            (" (2026-06-18); packaged as installable ", False, False),
             ("safety", False, True),
-            (" CLI; produced ZH/EN ", False, False),
-            ("one-pager + Mermaid pipeline flowchart", True, False),
-            (" (EN PPTX+PDF, 10 slides) for onboarding.", False, False),
-            ("4. ", False, False),
-            ("v6_composite keyword set", True, False),
-            (": binary accuracy ", False, False),
+            (" CLI + ZH/EN one-pager.", False, False),
+            ("3. ", False, False),
+            ("v6_composite keywords", True, False),
+            (": binary acc ", False, False),
             ("70.8%", True, False),
             (" on NCBN N=305 (+2.3 pp vs v5_final).", False, False),
         ],
@@ -132,46 +124,39 @@ ROWS = [
         "desc": [
             ("1. ", False, False),
             ("Phase 2 (peptide DL)", True, False),
-            (": local ESM-2 peptide-BBB model + ESM-BBB-Pred / DeepB3P; 4 BRP (BRINP2-related) sequences predicted for EJNH (Jason).", False, False),
+            (": local ESM-2 BBB model + ESM-BBB-Pred / DeepB3P; 4 BRP sequences predicted for EJNH.", False, False),
             ("2. ", False, False),
-            ("Phase 3 (benchmarking)", True, False),
-            (": cross-tool sensitivity / specificity / MCC; B3clf 12-model committee for SM.", False, False),
+            ("Phase 3 — benchmarking", True, False),
+            (": cross-tool sens / spec / MCC; B3clf 12-model committee for SM.", False, False),
             ("3. ", False, False),
-            ("Phase 4 — protraction-aware fusion layer", True, False),
-            (": lipidated / long-acting peptides no longer scored as backbone false-positives; ", False, False),
-            ("end-to-end auto-report pipeline", True, False),
-            (" (CLI → HTML + PPTX + LLM narrative).", False, False),
-            ("4. ", False, False),
-            ("Phase 4+ — modality-adaptive uncertainty", True, False),
-            (": SM uses committee-disagreement 90% Wilson interval; peptide retains ESM framing — method-aware, no longer mixed.", False, False),
+            ("Phase 4 protraction-aware fusion + auto-report", True, False),
+            (" (CLI → HTML + PPTX + LLM narrative); modality-adaptive uncertainty (committee Wilson for SM; ESM framing for peptides).", False, False),
         ],
         "link": [(f"{J}RIC-388", False, False)],
     },
     # 4. Targets — multi-target
     {
         "cat": "Targets", "cat_span": 1,
-        "act": "Multi-target safety assessments — RORA / CDK8-19 / DGKQ family / GRB10 / PAM / EE strict-tox",
+        "act": "Multi-target safety assessments — RORA / CDK8-19 / DGKQ / GRB10 / PAM / EE strict-tox",
         "desc": [
             ("• ", False, False),
             ("RORA", True, False),
-            (" (req. MUEW): direction-feasibility for cardiometabolic / DIO — activation vs peripherally-restricted partial inverse agonist, modality-aware run. ", False, False),
-            ("RORA tool compounds", True, False),
-            (" SR3335 / SR1001 / SR1078 BBB report via B3clf / CNS-MPO + committee uncertainty → ", False, False),
+            (" (req. MUEW): direction-feasibility for cardiometabolic / DIO; tool compounds SR3335 / SR1001 / SR1078 BBB report → ", False, False),
             ("RIC-389 Done", True, False),
             (".", False, False),
             ("• ", False, False),
-            ("CDK8 / CDK19 inhibition", True, False),
-            (": independent cross-check supporting NCBN/IKEB reproductive-tox termination call on RP0909 (CDK8i, T2D).", False, False),
+            ("CDK8 / CDK19", True, False),
+            (": independent cross-check supporting NCBN/IKEB repro-tox termination on RP0909.", False, False),
             ("• ", False, False),
             ("DGKQ family", True, False),
-            (" (9 paralogs): inhibition RED=2 / YELLOW=5 / GREEN=2; activation-vs-inhibition two-direction comparison delivered.", False, False),
-            ("• Additional batches: ", False, False),
-            ("GRB10 inhibition", True, False),
+            (" (9 paralogs): RED=2 / YELLOW=5 / GREEN=2; two-direction comparison delivered.", False, False),
+            ("• Batches: ", False, False),
+            ("GRB10", True, False),
             (", ", False, False),
-            ("PAM inhibition", True, False),
+            ("PAM", True, False),
             (", ", False, False),
-            ("EE strict-tox panel", True, False),
-            (", and 2026-06-09 / 06-10 GJSN series — outputs mirrored to /TDE_TV/shared_folder/QYJI/safety/.", False, False),
+            ("EE strict-tox", True, False),
+            (", 2026-06-09 / 06-10 GJSN series — mirrored to /TDE_TV/shared_folder/QYJI/safety/.", False, False),
         ],
         "link": [
             (f"{J}RIC-349", False, False),
@@ -181,57 +166,43 @@ ROWS = [
     },
     # 5. Campaign — RIC-261
     {
-        "cat": "Campaign", "cat_span": 3,
-        "act": "Skeletal Muscle Atrophy assay — new batch + 4-way skeleton benchmark + cross-batch generalisation (RIC-261)",
+        "cat": "Campaign", "cat_span": 2,
+        "act": "Skeletal Muscle Atrophy assay — new batch + benchmark + cross-batch generalisation (RIC-261)",
         "desc": [
             ("1. New batch ", False, False),
             ("IGWU_20260608_1 (PLXN/SEMA siRNA repeat)", True, False),
-            (": 240 wells end-to-end through v3.5 decoupled pipeline (no code changes; new wet-lab data).", False, False),
+            (": 240 wells end-to-end through v3.5 pipeline.", False, False),
             ("2. ", False, False),
-            ("4-way skeleton-analysis benchmark", True, False),
-            (": ImageJ / OldPipeline / LegacyApprox / NewPyimagej over 240 images.", False, False),
-            ("3. ", False, False),
-            ("Cross-batch SSMD validation (3 batches, 720 images)", True, False),
-            (": per-image total-length ρ ≥ 0.97, SSMD ρ ≥ 0.986, hit-class concordance ≥ 11/12 (best 20/20).", False, False),
-            ("4. Single-file HTML dashboard updated: persistent path + cross-batch volcano (time-period & class colouring, click-to-jump).", False, False),
+            ("4-way skeleton benchmark", True, False),
+            (" (ImageJ / OldPipeline / LegacyApprox / NewPyimagej) on 240 images; ", False, False),
+            ("cross-batch SSMD validation (3 batches, 720 images)", True, False),
+            (": total-length ρ ≥ 0.97, SSMD ρ ≥ 0.986, hit-class concordance ≥ 11/12.", False, False),
         ],
         "link": [(f"{J}RIC-261", False, False)],
     },
-    # 6. Campaign — RIC-298 / RIC-390
+    # 6. Campaign — RIC-298 / RIC-390 (imaging arm; vAssay 字样去除)
     {
         "cat": "", "act": "Adipocyte Lipolysis Assay — imaging arm split + Round-1 BF analysis (RIC-298 / RIC-390)",
         "desc": [
-            ("1. Imaging-side activity log split out into new ticket ", False, False),
+            ("1. Imaging activity log split out to new ticket ", False, False),
             ("RIC-390", True, False),
-            ("; RIC-298 kept as parent vAssay capability ticket.", False, False),
+            (" (RIC-298 retained as parent).", False, False),
             ("2. ", False, False),
             ("Round-1 KDE plate BF analysis", True, False),
             (" (data: Yang Huan / OFGM): CIDEC KD vs NTC, ", False, False),
             ("2,700 images (5 Z × 9 fields × 60 wells)", True, False),
-            (", DICOM tiff stack → segmentation → droplet-level quantification end-to-end.", False, False),
+            ("; DICOM tiff stack → segmentation → droplet-level quantification end-to-end.", False, False),
         ],
         "link": [
             (f"{J}RIC-298", False, False),
             (f"{J}RIC-390", False, False),
         ],
     },
-    # 7. Campaign — RIC-340 closure
-    {
-        "cat": "", "act": "RadEE — Speakman cohort VBQ pipeline validation closure (RIC-340)",
-        "desc": [
-            ("Closed RIC-340 with full activity log of the only actively pursued sub-stream: collaboration with ", False, False),
-            ("NNRCO Imaging Analytics (Mateusz Florkow et al., Oxford)", True, False),
-            (" to validate their VBQ MRI-marker docker pipeline on Dr Speakman's cohort. Status: ", False, False),
-            ("Done", True, False),
-            (".", False, False),
-        ],
-        "link": [(f"{J}RIC-340", False, False)],
-    },
 ]
 
 VMERGE_SPANS = [
     (1, 3),  # Capability rows 1-3
-    (5, 3),  # Campaign rows 5-7
+    (5, 2),  # Campaign rows 5-6
 ]
 
 OUT = "reports/ric-monthly/2026-06/monthly_report_2026_06.pptx"
