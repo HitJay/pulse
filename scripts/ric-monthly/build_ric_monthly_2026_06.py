@@ -46,23 +46,52 @@ def add_run(para, text, bold=False, size_pt=SZ_BODY, color=DARK_GREY, italic=Fal
     run.font.name = 'Calibri'
     return run
 
+def _style_para(para):
+    para.space_before = Pt(0.5)
+    para.space_after  = Pt(0.5)
+    para.line_spacing = Pt(LINE_SPACING)
+
 def fill_cell(cell, lines, header=False, category=False, link=False):
+    """Render `lines` into `cell`.
+
+    `lines` is a list of (text, bold, italic) tuples. Tuples are inline runs
+    on the *current* paragraph; a literal '\n' inside `text` starts a new
+    paragraph. Links cells get one paragraph per tuple (one URL per line).
+    """
     tf = cell.text_frame
     tf.word_wrap = True
     tf.margin_left   = Inches(0.04)
     tf.margin_right  = Inches(0.04)
     tf.margin_top    = Inches(0.03)
     tf.margin_bottom = Inches(0.03)
-    first = True
+    c = WHITE if header else (NN_BLUE if category else DARK_GREY)
+    sz = SZ_HEADER if header else (SZ_BODY if not link else SZ_LINK)
+
+    para = tf.paragraphs[0]
+    _style_para(para)
+    para_used = False
+
     for (text, bold, italic) in lines:
-        para = tf.paragraphs[0] if first else tf.add_paragraph()
-        first = False
-        para.space_before = Pt(0.5)
-        para.space_after  = Pt(0.5)
-        para.line_spacing = Pt(LINE_SPACING)
-        c = WHITE if header else (NN_BLUE if category else DARK_GREY)
-        sz = SZ_HEADER if header else (SZ_BODY if not link else SZ_LINK)
-        add_run(para, text, bold=bold, italic=italic, size_pt=sz, color=c)
+        # Link cells: every tuple is its own paragraph (one URL per row).
+        if link:
+            if para_used:
+                para = tf.add_paragraph(); _style_para(para)
+            add_run(para, text, bold=bold, italic=italic, size_pt=sz, color=c)
+            para_used = True
+            continue
+
+        # Body cells: '\n' inside a tuple splits paragraphs; otherwise the
+        # tuple is an inline run on the current paragraph.
+        segments = text.split('\n')
+        for si, seg in enumerate(segments):
+            if si > 0:
+                para = tf.add_paragraph(); _style_para(para)
+                para_used = False
+            if seg == '' and not para_used:
+                # empty leading segment of a '\n…' tuple — keep blank para slot
+                continue
+            add_run(para, seg, bold=bold, italic=italic, size_pt=sz, color=c)
+            para_used = True
 
 def vmerge_restart(cell):
     tc = cell._tc
@@ -91,10 +120,10 @@ ROWS = [
             ("1. ", False, False),
             ("1440-well three-modality alignment", True, False),
             (": DRUG-seq × C24 imaging (DINOv2 384-dim) × TMRM, zero gaps; vCell pipeline + 24/24 tests.", False, False),
-            ("2. ", False, False),
+            ("\n2. ", False, False),
             ("Cross-modal MoA + 52 tier-1 candidates", True, False),
             (": 175 perturbations, KD tiering (strong 46 / weak 94 / failed 28); MoA states uncoupler-like 53 / mixed 39 / biogenesis-like 13 / toxic-collapse 6 / neutral 64.", False, False),
-            ("3. TMRM channel-identity correction verified against pipeline + imaging.", False, False),
+            ("\n3. TMRM channel-identity correction verified against pipeline + imaging.", False, False),
         ],
         "link": [(f"{J}RIC-381", False, False)],
     },
@@ -105,12 +134,12 @@ ROWS = [
             ("1. ", False, False),
             ("Modality-aware prompts + hedge-aware risk scoring", True, False),
             (": peripherally-restricted / partial-IA no longer blindly down-weights CNS LoF.", False, False),
-            ("2. ", False, False),
+            ("\n2. ", False, False),
             ("P0/P1 + conditional-risk layer", True, False),
             (" (2026-06-18); packaged as installable ", False, False),
             ("safety", False, True),
             (" CLI + ZH/EN one-pager.", False, False),
-            ("3. ", False, False),
+            ("\n3. ", False, False),
             ("v6_composite keywords", True, False),
             (": binary acc ", False, False),
             ("70.8%", True, False),
@@ -125,10 +154,10 @@ ROWS = [
             ("1. ", False, False),
             ("Phase 2 (peptide DL)", True, False),
             (": local ESM-2 BBB model + ESM-BBB-Pred / DeepB3P; 4 BRP sequences predicted for EJNH.", False, False),
-            ("2. ", False, False),
+            ("\n2. ", False, False),
             ("Phase 3 — benchmarking", True, False),
             (": cross-tool sens / spec / MCC; B3clf 12-model committee for SM.", False, False),
-            ("3. ", False, False),
+            ("\n3. ", False, False),
             ("Phase 4 protraction-aware fusion + auto-report", True, False),
             (" (CLI → HTML + PPTX + LLM narrative); modality-adaptive uncertainty (committee Wilson for SM; ESM framing for peptides).", False, False),
         ],
@@ -144,13 +173,13 @@ ROWS = [
             (" (req. MUEW): direction-feasibility for cardiometabolic / DIO; tool compounds SR3335 / SR1001 / SR1078 BBB report → ", False, False),
             ("RIC-389 Done", True, False),
             (".", False, False),
-            ("• ", False, False),
+            ("\n• ", False, False),
             ("CDK8 / CDK19", True, False),
             (": independent cross-check supporting NCBN/IKEB repro-tox termination on RP0909.", False, False),
-            ("• ", False, False),
+            ("\n• ", False, False),
             ("DGKQ family", True, False),
             (" (9 paralogs): RED=2 / YELLOW=5 / GREEN=2; two-direction comparison delivered.", False, False),
-            ("• Batches: ", False, False),
+            ("\n• Batches: ", False, False),
             ("GRB10", True, False),
             (", ", False, False),
             ("PAM", True, False),
@@ -172,7 +201,7 @@ ROWS = [
             ("1. New batch ", False, False),
             ("IGWU_20260608_1 (PLXN/SEMA siRNA repeat)", True, False),
             (": 240 wells end-to-end through v3.5 pipeline.", False, False),
-            ("2. ", False, False),
+            ("\n2. ", False, False),
             ("4-way skeleton benchmark", True, False),
             (" (ImageJ / OldPipeline / LegacyApprox / NewPyimagej) on 240 images; ", False, False),
             ("cross-batch SSMD validation (3 batches, 720 images)", True, False),
@@ -187,7 +216,7 @@ ROWS = [
             ("1. Imaging activity log split out to new ticket ", False, False),
             ("RIC-390", True, False),
             (" (RIC-298 retained as parent).", False, False),
-            ("2. ", False, False),
+            ("\n2. ", False, False),
             ("Round-1 KDE plate BF analysis", True, False),
             (" (data: Yang Huan / OFGM): CIDEC KD vs NTC, ", False, False),
             ("2,700 images (5 Z × 9 fields × 60 wells)", True, False),
