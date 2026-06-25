@@ -12,7 +12,7 @@ from __future__ import annotations
 import json
 import os
 import sys
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
@@ -66,12 +66,25 @@ def discover_projects() -> list[dict[str, Any]]:
         if ms_path.exists():
             with open(ms_path) as f:
                 ms_data = yaml.safe_load(f)
-            meta["_milestones"] = ms_data.get("milestones", [])
+            meta["_milestones"] = make_json_safe(ms_data.get("milestones", []))
         else:
             meta["_milestones"] = []
 
         projects.append(meta)
     return projects
+
+
+def make_json_safe(value: Any) -> Any:
+    """Convert YAML-native values into types json.dump can serialize."""
+    if isinstance(value, datetime):
+        return value.isoformat()
+    if isinstance(value, date):
+        return value.isoformat()
+    if isinstance(value, list):
+        return [make_json_safe(item) for item in value]
+    if isinstance(value, dict):
+        return {key: make_json_safe(item) for key, item in value.items()}
+    return value
 
 
 def get_repo_path(project: dict) -> Path | None:
