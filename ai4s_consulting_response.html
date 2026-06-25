@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI4S 赛道咨询答复 · 甲方科学家视角</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08090a;
+    --bg-elev: #0f1011;
+    --bg-card: #131416;
+    --border: #1f2023;
+    --border-strong: #2a2c30;
+    --text: #f7f8f8;
+    --text-dim: #9ca0a8;
+    --text-faint: #62656c;
+    --accent: #7170ff;
+    --accent-dim: #3d3c8a;
+    --accent-soft: rgba(113, 112, 255, 0.08);
+    --green: #4cb782;
+    --amber: #eab308;
+    --red: #ef4444;
+    --mono: 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+  .wrap {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 64px 32px 96px;
+  }
+  /* Header */
+  .hdr {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 32px;
+    margin-bottom: 48px;
+  }
+  .hdr .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .hdr h1 {
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+  .hdr .sub {
+    color: var(--text-dim);
+    font-size: 15px;
+    max-width: 640px;
+  }
+  .hdr .meta {
+    margin-top: 24px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text-faint);
+  }
+  .hdr .meta span strong {
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+  /* Section */
+  .sec {
+    margin-bottom: 56px;
+  }
+  .sec-hd {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .sec-hd .num {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .sec-hd h2 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .sec p {
+    color: var(--text-dim);
+    margin-bottom: 14px;
+  }
+  .sec p strong, .sec li strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+  /* TL;DR / callout */
+  .tldr {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-dim);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin-bottom: 16px;
+  }
+  .tldr .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .tldr p {
+    color: var(--text);
+    margin: 0;
+    font-size: 15px;
+  }
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 20px;
+    font-size: 14px;
+  }
+  thead th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    padding: 10px 14px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+  }
+  thead th:first-child { border-radius: 8px 0 0 0; }
+  thead th:last-child { border-radius: 0 8px 0 0; }
+  tbody td {
+    padding: 14px;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    vertical-align: top;
+  }
+  tbody td:first-child {
+    color: var(--text);
+    font-weight: 500;
+    font-family: var(--mono);
+    font-size: 13px;
+  }
+  tbody tr:hover td {
+    background: var(--bg-elev);
+  }
+  /* Lists */
+  ul.clean {
+    list-style: none;
+    margin: 8px 0 16px;
+  }
+  ul.clean li {
+    color: var(--text-dim);
+    padding: 8px 0 8px 22px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  ul.clean li:last-child { border-bottom: none; }
+  ul.clean li::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 18px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  ol.ranked {
+    list-style: none;
+    counter-reset: r;
+    margin: 8px 0 16px;
+  }
+  ol.ranked li {
+    counter-increment: r;
+    color: var(--text-dim);
+    padding: 10px 0 10px 36px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  ol.ranked li:last-child { border-bottom: none; }
+  ol.ranked li::before {
+    content: counter(r);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-dim);
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 500;
+  }
+  /* Tier cards */
+  .tiers {
+    display: grid;
+    gap: 12px;
+    margin: 12px 0 16px;
+  }
+  .tier {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    background: var(--bg-card);
+  }
+  .tier .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 6px;
+  }
+  .tier h4 {
+    font-size: 15px;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .tier p {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin: 0;
+  }
+  /* Verdict / final */
+  .verdict {
+    margin-top: 56px;
+    border: 1px solid var(--accent-dim);
+    border-radius: 14px;
+    padding: 28px 32px;
+    background: linear-gradient(180deg, var(--accent-soft) 0%, transparent 100%);
+  }
+  .verdict .tag {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .verdict p {
+    color: var(--text);
+    font-size: 17px;
+    line-height: 1.55;
+    margin: 0;
+    font-weight: 400;
+  }
+  /* Footer */
+  footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  /* Pill */
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border: 1px solid var(--border-strong);
+    color: var(--text-dim);
+    margin-right: 6px;
+  }
+  .pill.green { color: var(--green); border-color: rgba(76, 183, 130, 0.3); }
+  .pill.amber { color: var(--amber); border-color: rgba(234, 179, 8, 0.3); }
+  .pill.red   { color: var(--red);   border-color: rgba(239, 68, 68, 0.3); }
+  @media (max-width: 640px) {
+    .wrap { padding: 36px 20px 64px; }
+    .hdr h1 { font-size: 26px; }
+    table { font-size: 13px; }
+    tbody td { padding: 10px; }
+    thead th { padding: 8px 10px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hdr">
+    <div class="eyebrow">AI4S × Pharma · Consulting Brief</div>
+    <h1>AI4S 赛道：甲方 AI 资深科学家视角的精炼答复</h1>
+    <p class="sub">面向咨询方的 7 问回应。回答基于行业公开口径与 in-house target / safety / druggability 评估实操经验，不代表任何雇主官方立场。</p>
+    <div class="meta">
+      <span><strong>Author</strong> &nbsp; Jin Qiuye (Jay)</span>
+      <span><strong>Role</strong> &nbsp; In-house Senior AI Scientist (Pharma RIC)</span>
+      <span><strong>Focus</strong> &nbsp; Target ID · Druggability · Safety</span>
+    </div>
+  </header>
+
+  <!-- Q1 -->
+  <section class="sec">
+    <div class="sec-hd"><span class="num">Q1</span><h2>几家 AI4S 公司怎么比</h2></div>
+    <p>按"主营业务模式"分类比单看估值有用。市场把四种不同生意混在一起估值，是当前最大的认知错位。</p>
+    <table>
+      <thead><tr><th>公司</th><th>定位</th><th>核心能力</th><th>实操印象</th></tr></thead>
+      <tbody>
+        <tr><td>晶泰 XtalPi</td><td>CRO + SaaS</td><td>物理+ML 混合<br>小分子结晶 / ADMET / FEP</td><td>项目交付型,最像传统 CRO 的 AI 版,pharma 买单意愿最高</td></tr>
+        <tr><td>英矽 Insilico</td><td>Biotech</td><td>PandaOmics(靶点) + Chemistry42(分子) + 自有 IPF 等管线</td><td>故事完整,但本质是 biotech 估值逻辑,不是 AI 工具公司</td></tr>
+        <tr><td>深势 DP Tech</td><td>平台 / 基础设施</td><td>Uni-Mol 分子表征大模型 + Hermite + Bohrium 云算力</td><td>学界口碑好,商业化路径仍在摸索,更像 AI4S 的 OpenAI</td></tr>
+        <tr><td>百图 BioMap</td><td>大模型 + 自研管线</td><td>xTrimo 蛋白大模型,免疫为主</td><td>大模型叙事强,落地数据少,跟 Insilico 模式趋同</td></tr>
+        <tr><td>华深智药</td><td>垂类工具(抗体)</td><td>抗体结构预测 + 亲和力优化</td><td>垂类窄,但在 biologics 对标 Absci / Generate 是有戏的</td></tr>
+        <tr><td>天鹜科技</td><td>垂类工具(蛋白/酶)</td><td>蛋白定向进化、酶设计</td><td>小而美,工业酶+biologics 双线,接近 Cradle / Profluent</td></tr>
+      </tbody>
+    </table>
+    <div class="tldr">
+      <div class="tag">One-liner</div>
+      <p>晶泰=AI-CRO；Insilico/百图=AI-Biotech；深势=AI 基础设施；华深/天鹜=垂类工具。<strong>四种不同生意,估值逻辑必须分开看。</strong></p>
+    </div>
+  </section>
+
+  <!-- Q2 -->
+  <section class="sec">
+    <div class="sec-hd"><span class="num">Q2</span><h2>AI4S 需求能持续多久</h2></div>
+    <div class="tldr">
+      <div class="tag">Short Answer</div>
+      <p>赛道长期(10 年+)成立。但当前这波 hype cycle <strong>大概率 2026–2027 见底重估</strong>。</p>
+    </div>
+    <ul class="clean">
+      <li>长期驱动真实——Eroom's law 逼着 pharma 试任何能压缩 preclinical 时间的工具,FDA 也在松动 in silico evidence。</li>
+      <li>近两年签的 milestone-heavy deal (Insilico–Sanofi、XtalPi–Lilly 等) 大头还没到 readout。2026–2027 一旦几个 lead asset 临床失败,市场会回调。</li>
+      <li>AlphaFold3 / RFdiffusion 开源后,"算结构"这层差异化被抹平,吃这块红利的公司估值需要重估。</li>
+    </ul>
+    <p><strong>给甲方的判断：</strong>把它当成 10 年慢牛 + 中间一次深蹲，别在 hype 顶用 hype 估值签长约。</p>
+  </section>
+
+  <!-- Q3 -->
+  <section class="sec">
+    <div class="sec-hd"><span class="num">Q3</span><h2>药企为什么跟 AI4S 公司合作</h2></div>
+    <p>按 in-house 讨论时的实际权重排序：</p>
+    <ol class="ranked">
+      <li><strong>能力补位</strong>——点状能力(分子生成、抗体亲和力、ADMET 预测)自建团队 ROI 不划算,外包更快。</li>
+      <li><strong>风险转嫁</strong>——milestone-based deal 把早期失败的钱让对方先垫,pharma 只为成功付费。</li>
+      <li><strong>管线扩容(cheap shots on goal)</strong>——FIC 靶点不敢 all-in,找 AI 公司平行试 3–5 个,命中一个就赚。</li>
+      <li><strong>BD / 估值故事</strong>——不能忽视。签 AI deal 对 pharma 自己市值有正面信号。</li>
+    </ol>
+    <p><strong>反过来 pharma 不会外包的：</strong>靶点生物学验证、临床策略、关键 CMC。AI4S 公司想往这两端走都会撞墙。</p>
+  </section>
+
+  <!-- Q4 -->
+  <section class="sec">
+    <div class="sec-hd"><span class="num">Q4</span><h2>怎么判断 FIC 靶点成药性,AI 能引入吗</h2></div>
+    <p>成药性 (druggability) 我们内部按四层打分。AI 在不同层成熟度差异极大：</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tag"><span class="pill amber">辅助</span>Layer 1 · 生物学合理性</div>
+        <h4>通路证据 · KO 表型 · 遗传学 (OpenTargets genetics)</h4>
+        <p>AI 主要做证据聚合(PandaOmics、OT-ChatGPT)。<strong>结论仍要 wet lab 验证</strong>。</p>
+      </div>
+      <div class="tier">
+        <div class="tag"><span class="pill green">强项</span>Layer 2 · 结构可成药性</div>
+        <h4>Binding pocket · IDR · PPI 类型</h4>
+        <p>AI 强项,AlphaFold + fpocket / P2Rank 已是常规化生产力工具。</p>
+      </div>
+      <div class="tier">
+        <div class="tag"><span class="pill green">强项</span>Layer 3 · 配体可发现性</div>
+        <h4>Chemical matter · 化学空间 starting point</h4>
+        <p>Virtual screening / generative chemistry 已成熟,部分场景已超过传统 HTS。</p>
+      </div>
+      <div class="tier">
+        <div class="tag"><span class="pill amber">辅助</span>Layer 4 · Safety / on-target liability</div>
+        <h4>Tissue expression · Essentiality · Paralog redundancy</h4>
+        <p>这块就是我目前在做的。AI 把 GTEx / DepMap / PubMed 证据 LLM 聚合,<strong>但 GO/NO-GO 决策仍是人判断</strong>。</p>
+      </div>
+    </div>
+    <div class="tldr">
+      <div class="tag">Key Point for Consultants</div>
+      <p>AI 在 Layer 2 / 3 已是生产力工具,在 Layer 1 / 4 还只是"加速人类筛证据"的助手。<strong>任何声称"端到端自动化 FIC druggability assessment"的公司,要打问号。</strong></p>
+    </div>
+  </section>
+
+  <!-- Q5 -->
+  <section class="sec">
+    <div class="sec-hd"><span class="num">Q5</span><h2>核心壁垒在哪里</h2></div>
+    <p>按壁垒强度排序：</p>
+    <ol class="ranked">
+      <li><strong>专有数据</strong>(最强)——Recursion 的细胞影像、Insitro 的 functional genomics、Absci 的抗体湿实验数据闭环。<strong>这是唯一真正的护城河。</strong></li>
+      <li><strong>湿干闭环工程能力</strong>——不是有湿实验室就行,是 DBTL (Design-Build-Test-Learn) 跑得多快。Cradle、Generate Biomedicines 在这点甩开纯计算公司。</li>
+      <li><strong>垂直 know-how + pharma 关系</strong>——销售关系、监管经验、SOP,传统但有效。</li>
+      <li><strong>算法 / 模型</strong>(最弱)——AlphaFold3 开源后基本没壁垒,论文一发就被复现。</li>
+    </ol>
+    <p><strong>给甲方判断：</strong>没有专有湿实验数据闭环的纯算法公司,5 年内估值会收敛到 CRO 倍数。</p>
+  </section>
+
+  <!-- Q6 -->
+  <section class="sec">
+    <div class="sec-hd"><span class="num">Q6</span><h2>商业模式清晰吗</h2></div>
+    <p>不清晰,是这个赛道最大的问题。三种模式各有死结：</p>
+    <table>
+      <thead><tr><th>模式</th><th>代表</th><th>死结</th></tr></thead>
+      <tbody>
+        <tr><td>SaaS / 平台订阅</td><td>晶泰部分业务、深势 Bohrium</td><td>ARR 漂亮但 TAM 小,pharma IT / legal 采购周期长</td></tr>
+        <tr><td>Service / CRO</td><td>晶泰主业</td><td>收入稳定但毛利低,估值上不去</td></tr>
+        <tr><td>Biotech / 自研管线</td><td>Insilico、百图、Recursion</td><td>本质就是 biotech,赌临床 readout,跟 AI 关系不大</td></tr>
+      </tbody>
+    </table>
+    <div class="tldr">
+      <div class="tag">Truth</div>
+      <p>目前规模化盈利的 AI4S 公司,<strong>赚的是 CRO 的钱,讲的是 biotech 的故事</strong>。混合估值不可持续。</p>
+    </div>
+  </section>
+
+  <!-- Q7 -->
+  <section class="sec">
+    <div class="sec-hd"><span class="num">Q7</span><h2>合理估值水平</h2></div>
+    <p>参考一级市场可比 + 二级市场 Recursion / Schrödinger 倍数：</p>
+    <table>
+      <thead><tr><th>类型</th><th>合理估值锚</th></tr></thead>
+      <tbody>
+        <tr><td>AI-CRO (晶泰类)</td><td>3–6× forward revenue,对标 Charles River、Schrödinger (服务部分)</td></tr>
+        <tr><td>AI-Biotech (Insilico / 百图)</td><td>按管线 risk-adjusted NPV 估,<strong>不要给 AI 平台溢价</strong>。参考 Recursion 当前 ~$1.5B 市值 (已大幅回调)</td></tr>
+        <tr><td>AI 基础设施 (深势)</td><td>早期 PS 20–40× 可接受,但需看 ARR 曲线,否则回归 SaaS 5–10×</td></tr>
+        <tr><td>垂类工具 (华深 / 天鹜)</td><td>取决于客户集中度,2–4 个深度 pharma 合作 → $200–500M 量级</td></tr>
+      </tbody>
+    </table>
+    <p>Insilico 上市前那轮 ~$1B、晶泰 ~HK$15B IPO 定价,<strong>今天回头看都偏贵</strong>。再融一轮的话,AI-biotech 类砍 40–60%、AI-CRO 类砍 20–30% 才合理。</p>
+  </section>
+
+  <div class="verdict">
+    <div class="tag">Bottom Line · One Sentence</div>
+    <p>AI4S 是真长期,但<strong>当前估值结构错配</strong>——市场把 CRO 当 biotech 估值,把 biotech 当 SaaS 估值。未来两年会出现分化重估,幸存者会是那些<strong>握有专有湿实验数据闭环、且对自己定位 (CRO / biotech / 工具) 足够诚实</strong>的公司。</p>
+  </div>
+
+  <footer>
+    <span>© 2026 · Jin Qiuye · For consulting discussion only</span>
+    <span>Disclaimer: personal view, not Novo Nordisk's official position</span>
+  </footer>
+
+</div>
+</body>
+</html>
