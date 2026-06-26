@@ -1,0 +1,5 @@
+target,direction,tissue
+PCSK9,inhibit,liver
+HMGCR,inhibit,liver
+APOC3,knockdown,liver
+NFAT5,inhibit,adipose

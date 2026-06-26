@@ -1,0 +1,1 @@
+"""Public data source adapters for modality-lite."""
