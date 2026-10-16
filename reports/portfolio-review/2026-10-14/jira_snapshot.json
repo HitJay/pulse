@@ -1,0 +1,470 @@
+[
+ {
+  "key": "RIC-349",
+  "status": "In Progress",
+  "component": "Individual Target",
+  "created": "2025-12-15",
+  "updated": "2026-10-14",
+  "days_since_update": 0,
+  "summary": "Drug target safety pipeline — methodology & evaluation"
+ },
+ {
+  "key": "RIC-375",
+  "status": "In Progress",
+  "component": "Assay Work",
+  "created": "2026-04-02",
+  "updated": "2026-10-13",
+  "days_since_update": 1,
+  "summary": "Imaging pipeline development and maintanance for seahorse assay"
+ },
+ {
+  "key": "RIC-391",
+  "status": "In Progress",
+  "component": "Individual Target",
+  "created": "2026-07-13",
+  "updated": "2026-10-12",
+  "days_since_update": 2,
+  "summary": "Drug target safety pipeline — application log"
+ },
+ {
+  "key": "RIC-394",
+  "status": "In Progress",
+  "component": "Assay Work",
+  "created": "2026-07-16",
+  "updated": "2026-09-24",
+  "days_since_update": 20,
+  "summary": "IGWU myotube atrophy — batch processing application log"
+ },
+ {
+  "key": "RIC-396",
+  "status": "In Progress",
+  "component": "Individual Target",
+  "created": "2026-08-05",
+  "updated": "2026-09-22",
+  "days_since_update": 22,
+  "summary": "GPR81 (HCAR1) individual target assessment — docking, reverse-SAR & safety"
+ },
+ {
+  "key": "RIC-407",
+  "status": "In Progress",
+  "component": "Individual Target",
+  "created": "2026-09-20",
+  "updated": "2026-09-20",
+  "days_since_update": 24,
+  "summary": "GIGYF1–GRB10/14–INSR axis — PPI screening campaign & molecular glue structural druggability assessment"
+ },
+ {
+  "key": "RIC-403",
+  "status": "In Progress",
+  "component": "Individual Target",
+  "created": "2026-09-16",
+  "updated": "2026-09-18",
+  "days_since_update": 26,
+  "summary": "OXTR individual target assessment — structural pharmacology, druggability & selectivity benchmarking"
+ },
+ {
+  "key": "RIC-343",
+  "status": "Done",
+  "component": "Assay Work",
+  "created": "2025-11-04",
+  "updated": "2026-09-17",
+  "days_since_update": 27,
+  "summary": "Quantification analysis for neuronal insulin sensitivity assay"
+ },
+ {
+  "key": "RIC-359",
+  "status": "Done",
+  "component": "TDE Campaign",
+  "created": "2026-02-02",
+  "updated": "2026-09-17",
+  "days_since_update": 27,
+  "summary": "#INNOVO42 3’aQTL study"
+ },
+ {
+  "key": "RIC-380",
+  "status": "Done",
+  "component": "External Collaboration",
+  "created": "2026-04-27",
+  "updated": "2026-09-17",
+  "days_since_update": 27,
+  "summary": "External Innovation"
+ },
+ {
+  "key": "RIC-392",
+  "status": "Review",
+  "component": "",
+  "created": "2026-07-15",
+  "updated": "2026-09-17",
+  "days_since_update": 27,
+  "summary": "GHSR inverse agonist docking campaign — virtual screening + Boltz-2 cross-validation"
+ },
+ {
+  "key": "RIC-400",
+  "status": "Review",
+  "component": "Individual Target",
+  "created": "2026-09-02",
+  "updated": "2026-09-17",
+  "days_since_update": 27,
+  "summary": "PEX16 (inhibition): GREEN severe miss caused by sentence-level negation suppressing true risk keywords"
+ },
+ {
+  "key": "RIC-393",
+  "status": "Review",
+  "component": "Individual Target",
+  "created": "2026-07-15",
+  "updated": "2026-09-17",
+  "days_since_update": 27,
+  "summary": "GHSR inverse agonist docking campaign — virtual screening + Boltz-2 cross-validation"
+ },
+ {
+  "key": "RIC-405",
+  "status": "Review",
+  "component": "Individual Target",
+  "created": "2026-09-17",
+  "updated": "2026-09-17",
+  "days_since_update": 27,
+  "summary": "siGRB10 off-target safety evaluation: PRR5, LTN1, ALKBH8, LRRCC1 (liver focus)"
+ },
+ {
+  "key": "RIC-404",
+  "status": "In Progress",
+  "component": "Capability",
+  "created": "2026-09-16",
+  "updated": "2026-09-16",
+  "days_since_update": 28,
+  "summary": "Safety Landscape Tool lifecycle management and RI portal documentation (Q187219)"
+ },
+ {
+  "key": "RIC-395",
+  "status": "In Progress",
+  "component": "Individual Target",
+  "created": "2026-07-27",
+  "updated": "2026-09-16",
+  "days_since_update": 28,
+  "summary": "Shiny app for Safety Red Line target intake"
+ },
+ {
+  "key": "RIC-398",
+  "status": "Done",
+  "component": "Capability",
+  "created": "2026-09-01",
+  "updated": "2026-09-03",
+  "days_since_update": 41,
+  "summary": "Plan: refresh v1.x-era archive assessments on the Safety Dashboard (keyword-level evidence gap)"
+ },
+ {
+  "key": "RIC-385",
+  "status": "Done",
+  "component": "Individual Target",
+  "created": "2026-05-21",
+  "updated": "2026-09-02",
+  "days_since_update": 42,
+  "summary": "Historical safety report retrieval tool for target list lookup"
+ },
+ {
+  "key": "RIC-379",
+  "status": "In Progress",
+  "component": "Assay Work",
+  "created": "2026-04-27",
+  "updated": "2026-08-18",
+  "days_since_update": 57,
+  "summary": "Imaging best practice and benchmarking"
+ },
+ {
+  "key": "RIC-261",
+  "status": "Review",
+  "component": "Assay Work,TDE Campaign",
+  "created": "2025-03-03",
+  "updated": "2026-08-11",
+  "days_since_update": 64,
+  "summary": "Image-based Skeletal Muscle Atrophy Assay"
+ },
+ {
+  "key": "RIC-381",
+  "status": "Analysis",
+  "component": "Capability",
+  "created": "2026-04-27",
+  "updated": "2026-08-06",
+  "days_since_update": 69,
+  "summary": "In vitro model characterization and data Fairness"
+ },
+ {
+  "key": "RIC-364",
+  "status": "In Progress",
+  "component": "Capability",
+  "created": "2026-03-11",
+  "updated": "2026-07-10",
+  "days_since_update": 96,
+  "summary": "High-frequency word statistics analysis for safety landscape tool"
+ },
+ {
+  "key": "RIC-389",
+  "status": "Done",
+  "component": "Individual Target",
+  "created": "2026-05-29",
+  "updated": "2026-06-17",
+  "days_since_update": 119,
+  "summary": "BBB permeability prediction for RORA tool compounds (SR3335 / SR1001 / SR1078)"
+ },
+ {
+  "key": "RIC-388",
+  "status": "In Progress",
+  "component": "Individual Target",
+  "created": "2026-05-28",
+  "updated": "2026-06-17",
+  "days_since_update": 119,
+  "summary": "BBB permeability prediction expansion: SM tools, peptide DL models, validation benchmarking"
+ },
+ {
+  "key": "RIC-358",
+  "status": "In Progress",
+  "component": "TDE Campaign",
+  "created": "2026-02-02",
+  "updated": "2026-06-10",
+  "days_since_update": 126,
+  "summary": "TMRM Imaging analysis for Energy Expenditure (EE) Campaign"
+ },
+ {
+  "key": "RIC-298",
+  "status": "In Progress",
+  "component": "Capability",
+  "created": "2025-05-20",
+  "updated": "2026-06-08",
+  "days_since_update": 128,
+  "summary": "Adipocyte Lipolysis Assay"
+ },
+ {
+  "key": "RIC-390",
+  "status": "In Progress",
+  "component": "Assay Work",
+  "created": "2026-06-08",
+  "updated": "2026-06-08",
+  "days_since_update": 128,
+  "summary": "Adipocyte lipolysis assay imaging analysis"
+ },
+ {
+  "key": "RIC-340",
+  "status": "Done",
+  "component": "Capability",
+  "created": "2025-09-02",
+  "updated": "2026-06-08",
+  "days_since_update": 128,
+  "summary": "RadEE: In-House Radiomics Library for Energy Expenditure Cohort"
+ },
+ {
+  "key": "RIC-386",
+  "status": "In Progress",
+  "component": "Individual Target",
+  "created": "2026-05-21",
+  "updated": "2026-06-08",
+  "days_since_update": 128,
+  "summary": "DGKQ family members safety assessment"
+ },
+ {
+  "key": "RIC-384",
+  "status": "Review",
+  "component": "Individual Target",
+  "created": "2026-05-21",
+  "updated": "2026-05-28",
+  "days_since_update": 139,
+  "summary": "MC4R agonist blood brain barrier permeability prediction"
+ },
+ {
+  "key": "RIC-387",
+  "status": "Done",
+  "component": "Capability",
+  "created": "2026-05-22",
+  "updated": "2026-05-22",
+  "days_since_update": 145,
+  "summary": "Drug target safety pipeline — data layer inventory and documentation"
+ },
+ {
+  "key": "RIC-218",
+  "status": "Review",
+  "component": "External Collaboration",
+  "created": "2025-01-06",
+  "updated": "2026-05-21",
+  "days_since_update": 146,
+  "summary": "Cell Annotation for STOmics"
+ },
+ {
+  "key": "RIC-246",
+  "status": "Review",
+  "component": "TDE Campaign",
+  "created": "2025-02-25",
+  "updated": "2026-05-21",
+  "days_since_update": 146,
+  "summary": "Imaging Analysis for Liver Targets T2D Obesity #31"
+ },
+ {
+  "key": "RIC-245",
+  "status": "Review",
+  "component": "TDE Campaign",
+  "created": "2025-02-25",
+  "updated": "2026-05-21",
+  "days_since_update": 146,
+  "summary": "Imaging Analysis for Cellular Respiration to Improve Cardiometabolic Health #24"
+ },
+ {
+  "key": "RIC-244",
+  "status": "Review",
+  "component": "TDE Campaign",
+  "created": "2025-02-25",
+  "updated": "2026-05-21",
+  "days_since_update": 146,
+  "summary": "Image-based Subgroup Analysis of Key “T2D-to-DKD” Pathways Genes #22"
+ },
+ {
+  "key": "RIC-270",
+  "status": "Review",
+  "component": "Assay Work",
+  "created": "2025-03-20",
+  "updated": "2026-05-21",
+  "days_since_update": 146,
+  "summary": "DOE design for FA/TG cycling assay-chase stage"
+ },
+ {
+  "key": "RIC-331",
+  "status": "Review",
+  "component": "Assay Work,Capability",
+  "created": "2025-08-14",
+  "updated": "2026-05-21",
+  "days_since_update": 146,
+  "summary": "MTP TMRM Imaging Model 2 Channel"
+ },
+ {
+  "key": "RIC-262",
+  "status": "Review",
+  "component": "Individual Target",
+  "created": "2025-03-03",
+  "updated": "2026-05-21",
+  "days_since_update": 146,
+  "summary": "Imaging analysis for In vitro validation & MoA exploration of O-304"
+ },
+ {
+  "key": "DBIO-455",
+  "status": "In Progress",
+  "component": "",
+  "created": "2026-04-10",
+  "updated": "2026-04-14",
+  "days_since_update": 183,
+  "summary": "Assess safety of KDM2A KD"
+ },
+ {
+  "key": "RIC-247",
+  "status": "In Progress",
+  "component": "Capability",
+  "created": "2025-02-25",
+  "updated": "2026-04-02",
+  "days_since_update": 195,
+  "summary": "Decoupled Bioimaging Analysis Pipeline Development and Maintainance"
+ },
+ {
+  "key": "RIC-345",
+  "status": "Done",
+  "component": "Capability",
+  "created": "2025-11-12",
+  "updated": "2025-12-16",
+  "days_since_update": 302,
+  "summary": "Explore the correlation between DXA and MRI biomarkers"
+ },
+ {
+  "key": "RIC-305",
+  "status": "Done",
+  "component": "Capability",
+  "created": "2025-06-06",
+  "updated": "2025-12-16",
+  "days_since_update": 302,
+  "summary": "Cellpose-SAM foundation model upgrade"
+ },
+ {
+  "key": "RIC-300",
+  "status": "Done",
+  "component": "Capability",
+  "created": "2025-05-29",
+  "updated": "2025-12-16",
+  "days_since_update": 302,
+  "summary": "Adipocyte FAO vAssay"
+ },
+ {
+  "key": "RIC-219",
+  "status": "Done",
+  "component": "Capability",
+  "created": "2025-01-06",
+  "updated": "2025-12-16",
+  "days_since_update": 302,
+  "summary": "DoE for NNRCC"
+ },
+ {
+  "key": "RIC-312",
+  "status": "Forwarded",
+  "component": "Assay Work",
+  "created": "2025-07-28",
+  "updated": "2025-12-16",
+  "days_since_update": 302,
+  "summary": "DepMap Targets Analysis for Campaign #31 #24 #22"
+ },
+ {
+  "key": "RIC-342",
+  "status": "Done",
+  "component": "Assay Work",
+  "created": "2025-09-23",
+  "updated": "2025-11-04",
+  "days_since_update": 344,
+  "summary": "Development of outlier detection tool"
+ },
+ {
+  "key": "RIC-341",
+  "status": "Done",
+  "component": "Individual Target",
+  "created": "2025-09-23",
+  "updated": "2025-09-23",
+  "days_since_update": 386,
+  "summary": "Safety assessment using ATP/Imaging/LDH assay data for GRB14"
+ },
+ {
+  "key": "RIC-292",
+  "status": "In Progress",
+  "component": "Individual Target",
+  "created": "2025-05-13",
+  "updated": "2025-07-04",
+  "days_since_update": 467,
+  "summary": "GalXC-SLC25A5 for MASH"
+ },
+ {
+  "key": "RIC-254",
+  "status": "In Progress",
+  "component": "Capability",
+  "created": "2025-02-28",
+  "updated": "2025-05-15",
+  "days_since_update": 517,
+  "summary": "EE VAssay for Multiple Cell Lines"
+ },
+ {
+  "key": "RIC-217",
+  "status": "In Progress",
+  "component": "Assay Work",
+  "created": "2025-01-06",
+  "updated": "2025-05-15",
+  "days_since_update": 517,
+  "summary": "FAOBlue - Imaging Assay for Fatty Acid Oxidation"
+ },
+ {
+  "key": "RIC-209",
+  "status": "In Progress",
+  "component": "Assay Work",
+  "created": "2025-01-06",
+  "updated": "2025-05-15",
+  "days_since_update": 517,
+  "summary": "TMRM - Imaging Assay for Energy Expenditure"
+ },
+ {
+  "key": "RIC-266",
+  "status": "Done",
+  "component": "Individual Target",
+  "created": "2025-03-10",
+  "updated": "2025-04-11",
+  "days_since_update": 551,
+  "summary": "Gaussian simulation for FSTL1 in vivo experiments"
+ }
+]

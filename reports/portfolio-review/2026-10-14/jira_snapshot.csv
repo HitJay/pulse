@@ -1,0 +1,53 @@
+key,status,component,created,updated,days_since_update,summary
+RIC-349,In Progress,Individual Target,2025-12-15,2026-10-14,0,Drug target safety pipeline — methodology & evaluation
+RIC-375,In Progress,Assay Work,2026-04-02,2026-10-13,1,Imaging pipeline development and maintanance for seahorse assay
+RIC-391,In Progress,Individual Target,2026-07-13,2026-10-12,2,Drug target safety pipeline — application log
+RIC-394,In Progress,Assay Work,2026-07-16,2026-09-24,20,IGWU myotube atrophy — batch processing application log
+RIC-396,In Progress,Individual Target,2026-08-05,2026-09-22,22,"GPR81 (HCAR1) individual target assessment — docking, reverse-SAR & safety"
+RIC-407,In Progress,Individual Target,2026-09-20,2026-09-20,24,GIGYF1–GRB10/14–INSR axis — PPI screening campaign & molecular glue structural druggability assessment
+RIC-403,In Progress,Individual Target,2026-09-16,2026-09-18,26,"OXTR individual target assessment — structural pharmacology, druggability & selectivity benchmarking"
+RIC-343,Done,Assay Work,2025-11-04,2026-09-17,27,Quantification analysis for neuronal insulin sensitivity assay
+RIC-359,Done,TDE Campaign,2026-02-02,2026-09-17,27,#INNOVO42 3’aQTL study
+RIC-380,Done,External Collaboration,2026-04-27,2026-09-17,27,External Innovation
+RIC-392,Review,,2026-07-15,2026-09-17,27,GHSR inverse agonist docking campaign — virtual screening + Boltz-2 cross-validation
+RIC-400,Review,Individual Target,2026-09-02,2026-09-17,27,PEX16 (inhibition): GREEN severe miss caused by sentence-level negation suppressing true risk keywords
+RIC-393,Review,Individual Target,2026-07-15,2026-09-17,27,GHSR inverse agonist docking campaign — virtual screening + Boltz-2 cross-validation
+RIC-405,Review,Individual Target,2026-09-17,2026-09-17,27,"siGRB10 off-target safety evaluation: PRR5, LTN1, ALKBH8, LRRCC1 (liver focus)"
+RIC-404,In Progress,Capability,2026-09-16,2026-09-16,28,Safety Landscape Tool lifecycle management and RI portal documentation (Q187219)
+RIC-395,In Progress,Individual Target,2026-07-27,2026-09-16,28,Shiny app for Safety Red Line target intake
+RIC-398,Done,Capability,2026-09-01,2026-09-03,41,Plan: refresh v1.x-era archive assessments on the Safety Dashboard (keyword-level evidence gap)
+RIC-385,Done,Individual Target,2026-05-21,2026-09-02,42,Historical safety report retrieval tool for target list lookup
+RIC-379,In Progress,Assay Work,2026-04-27,2026-08-18,57,Imaging best practice and benchmarking
+RIC-261,Review,"Assay Work,TDE Campaign",2025-03-03,2026-08-11,64,Image-based Skeletal Muscle Atrophy Assay
+RIC-381,Analysis,Capability,2026-04-27,2026-08-06,69,In vitro model characterization and data Fairness
+RIC-364,In Progress,Capability,2026-03-11,2026-07-10,96,High-frequency word statistics analysis for safety landscape tool
+RIC-389,Done,Individual Target,2026-05-29,2026-06-17,119,BBB permeability prediction for RORA tool compounds (SR3335 / SR1001 / SR1078)
+RIC-388,In Progress,Individual Target,2026-05-28,2026-06-17,119,"BBB permeability prediction expansion: SM tools, peptide DL models, validation benchmarking"
+RIC-358,In Progress,TDE Campaign,2026-02-02,2026-06-10,126,TMRM Imaging analysis for Energy Expenditure (EE) Campaign
+RIC-298,In Progress,Capability,2025-05-20,2026-06-08,128,Adipocyte Lipolysis Assay
+RIC-390,In Progress,Assay Work,2026-06-08,2026-06-08,128,Adipocyte lipolysis assay imaging analysis
+RIC-340,Done,Capability,2025-09-02,2026-06-08,128,RadEE: In-House Radiomics Library for Energy Expenditure Cohort
+RIC-386,In Progress,Individual Target,2026-05-21,2026-06-08,128,DGKQ family members safety assessment
+RIC-384,Review,Individual Target,2026-05-21,2026-05-28,139,MC4R agonist blood brain barrier permeability prediction
+RIC-387,Done,Capability,2026-05-22,2026-05-22,145,Drug target safety pipeline — data layer inventory and documentation
+RIC-218,Review,External Collaboration,2025-01-06,2026-05-21,146,Cell Annotation for STOmics
+RIC-246,Review,TDE Campaign,2025-02-25,2026-05-21,146,Imaging Analysis for Liver Targets T2D Obesity #31
+RIC-245,Review,TDE Campaign,2025-02-25,2026-05-21,146,Imaging Analysis for Cellular Respiration to Improve Cardiometabolic Health #24
+RIC-244,Review,TDE Campaign,2025-02-25,2026-05-21,146,Image-based Subgroup Analysis of Key “T2D-to-DKD” Pathways Genes #22
+RIC-270,Review,Assay Work,2025-03-20,2026-05-21,146,DOE design for FA/TG cycling assay-chase stage
+RIC-331,Review,"Assay Work,Capability",2025-08-14,2026-05-21,146,MTP TMRM Imaging Model 2 Channel
+RIC-262,Review,Individual Target,2025-03-03,2026-05-21,146,Imaging analysis for In vitro validation & MoA exploration of O-304
+DBIO-455,In Progress,,2026-04-10,2026-04-14,183,Assess safety of KDM2A KD
+RIC-247,In Progress,Capability,2025-02-25,2026-04-02,195,Decoupled Bioimaging Analysis Pipeline Development and Maintainance
+RIC-345,Done,Capability,2025-11-12,2025-12-16,302,Explore the correlation between DXA and MRI biomarkers
+RIC-305,Done,Capability,2025-06-06,2025-12-16,302,Cellpose-SAM foundation model upgrade
+RIC-300,Done,Capability,2025-05-29,2025-12-16,302,Adipocyte FAO vAssay
+RIC-219,Done,Capability,2025-01-06,2025-12-16,302,DoE for NNRCC
+RIC-312,Forwarded,Assay Work,2025-07-28,2025-12-16,302,DepMap Targets Analysis for Campaign #31 #24 #22
+RIC-342,Done,Assay Work,2025-09-23,2025-11-04,344,Development of outlier detection tool
+RIC-341,Done,Individual Target,2025-09-23,2025-09-23,386,Safety assessment using ATP/Imaging/LDH assay data for GRB14
+RIC-292,In Progress,Individual Target,2025-05-13,2025-07-04,467,GalXC-SLC25A5 for MASH
+RIC-254,In Progress,Capability,2025-02-28,2025-05-15,517,EE VAssay for Multiple Cell Lines
+RIC-217,In Progress,Assay Work,2025-01-06,2025-05-15,517,FAOBlue - Imaging Assay for Fatty Acid Oxidation
+RIC-209,In Progress,Assay Work,2025-01-06,2025-05-15,517,TMRM - Imaging Assay for Energy Expenditure
+RIC-266,Done,Individual Target,2025-03-10,2025-04-11,551,Gaussian simulation for FSTL1 in vivo experiments
